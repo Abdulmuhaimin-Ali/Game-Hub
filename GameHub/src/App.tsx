@@ -1,8 +1,10 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { Button, ButtonGroup, Stack, GridItem, Show } from "@chakra-ui/react";
+import { GridItem, Show } from "@chakra-ui/react";
 import "./App.css";
 import { Grid } from "@chakra-ui/react";
+
+import { NavBar } from "./components/NavBar";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,13 +12,10 @@ function App() {
   return (
     <>
       <Grid
-        templateAreas={{
-          base: `"nav" "main"`,
-          lg: `"nav main" "nav aside"`,
-        }}
+        templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
       >
         <GridItem area="nav" bg="coral">
-          Nav
+          <NavBar />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" bg="gold">
