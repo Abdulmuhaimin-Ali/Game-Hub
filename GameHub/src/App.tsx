@@ -5,6 +5,8 @@ import "./App.css";
 import { Grid } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import { NavBar } from "./components/NavBar";
+import AsideGrid from "./components/AsideGrid";
+import { GenreList } from "./components/GenreList";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +20,9 @@ function App() {
           <NavBar />
         </GridItem>
         <Show above="lg">
-          <GridItem area="aside">Aside</GridItem>
+          <GridItem area="aside">
+            <AsideGrid />
+          </GridItem>
         </Show>
         <GridItem area="main">
           <GameGrid />
